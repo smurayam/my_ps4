@@ -6,7 +6,7 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 01:05:23 by nnnya             #+#    #+#             */
-/*   Updated: 2025/10/24 18:13:08 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/10/24 19:22:09 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static void	push_current_chunk(t_stack *a, t_stack *b, int lower, int upper)
 		}
 		else
 		{
-			op_ra[a];
+			op_ra(a);
 			i++;
 		}
 	}
@@ -113,7 +113,7 @@ void	chunk_sort(t_stack *a, t_stack *b)
 	}
 	while(b->size > 0)
 	{
-		bring_b_max_top[b];
+		bring_b_max_top(b);
 		op_pa(a, b);
 	}
 }
