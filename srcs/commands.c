@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:42:47 by nnnya             #+#    #+#             */
-/*   Updated: 2025/10/17 18:02:56 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/10/25 19:45:45 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void    op_pa(t_stack *a, t_stack *b)
 		return ;
 	if (a->size != 0)
 	{
-		i = a->size;
-		while (i > 0)
+		i = a->size + 1;
+		while (--i > 0)
         {
             a->vec[i] = a->vec[i - 1];
             i --;
@@ -48,7 +48,7 @@ void    op_pa(t_stack *a, t_stack *b)
 	ft_printf("pa\n");
 }
 
-void	op_pb(t_stack *a, t_stack *b)
+void    op_pb(t_stack *a, t_stack *b)
 {
 	ssize_t	i;
 
@@ -56,13 +56,13 @@ void	op_pb(t_stack *a, t_stack *b)
 		return ;
 	if (b->size != 0)
 	{
-		i = b->size;
-		while (i > 0)
+		i = b->size + 1;
+		while (--i > 0)
         {
             b->vec[i] = b->vec[i - 1];
-            i--;
+            i --;
         }
-    }
+	}
 	b->vec[0] = a->vec[0];
 	b->size++;
 	i = -1;
@@ -100,4 +100,19 @@ void	op_rra(t_stack *a)
 		a->vec[i + 1] = a->vec[i];
 	a->vec[0] = temp;
 	ft_printf("rra\n");
+}
+
+void	op_rrb(t_stack *b)
+{
+	int	temp;
+	ssize_t i;
+
+	if(b->size < 2)
+		return;
+	temp = b->vec[b->size - 1];
+	i = b->size - 1;
+	while(--i >= 0)
+		b->vec[i + 1] = b->vec[i];
+	b->vec[0] = temp;
+	ft_printf("rrb\n");
 }
