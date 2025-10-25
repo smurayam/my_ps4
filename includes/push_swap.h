@@ -6,7 +6,7 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 15:48:07 by nnnya             #+#    #+#             */
-/*   Updated: 2025/10/25 17:37:44 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/10/25 19:06:31 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include "printf/Libft01/libft.h"
 #include "printf/ft_printf.h"
 
+#include <limits.h>
+#include <stddef.h>
+#include <stdlib.h>
 
 # define SUCCESS 0
 # define FAILURE 1

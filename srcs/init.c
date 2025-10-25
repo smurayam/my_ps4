@@ -6,7 +6,7 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 16:06:01 by nnnya             #+#    #+#             */
-/*   Updated: 2025/10/25 17:39:09 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/10/25 19:15:29 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void    set_stacks(t_stack *a, t_stack *b, int ac, const char **av)
             exit_cleanly_error(a, b);
         a->vec[i] = ps_atoi(av[i + 1]);
     }
-    if(has_dup_elem(a) == TRUE)
+    if(has_dup_elem(*a) == TRUE)
         exit_cleanly_error(a, b);
 }
 
