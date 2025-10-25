@@ -6,14 +6,14 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 15:48:07 by nnnya             #+#    #+#             */
-/*   Updated: 2025/10/24 18:32:28 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/10/25 17:17:07 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "libft/libft.h"
+#include "printf/Libft01/libft.h"
 #include "printf/ft_printf.h"
 
 
@@ -32,9 +32,6 @@ typedef struct s_stack
 
 //src/commands
 
-//src/utils/error.c
-void    exit_cleanly_error(t_stack *a, t_stack *b);
-void    exit_cleanly(t_stack *a, t_stack *b, int status);
 
 //src
 //chunk_sort.c
@@ -50,6 +47,10 @@ void    op_pa(t_stack *a, t_stack *b);
 void	op_pb(t_stack *a, t_stack *b);
 void    op_ra(t_stack *a);
 void	op_rra(t_stack *a);
+
+//src/error.c
+void    exit_cleanly_error(t_stack *a, t_stack *b);
+void    exit_cleanly(t_stack *a, t_stack *b, int status);
 
 //init.c
 void    set_stacks(t_stack *a, t_stack *b, int ac, const char **av);

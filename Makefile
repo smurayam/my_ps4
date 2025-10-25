@@ -5,66 +5,54 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/01 15:38:02 by nnnya             #+#    #+#              #
-#    Updated: 2025/10/01 17:00:02 by nnnya            ###   ########.fr        #
+#    Created: 2025/10/24 19:27:39 by nnnya             #+#    #+#              #
+#    Updated: 2025/10/25 17:14:58 by nnnya            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+NAME		=	push_swap
+CC			=	cc
+CFLAGS		=	-Wall -Wextra -Werror
 
-# --- ソースファイル ---
-# コマンド関連
-CMDS_DIR = srcs/commands/
-CMDS_FILES = push.c reverse_rotate.c rotate.c swap.c
-CMDS_SRCS = $(addprefix $(CMDS_DIR), $(CMDS_FILES))
+SRCS	=	srcs/commands.c \
+			srcs/init.c \
+			srcs/sort_elements.c \
+			srcs/chunk_sort.c \
+			srcs/error.c \
+			srcs/main.c \
+			srcs/sort_small.c \
 
-# ユーティリティ関連
-UTILS_DIR = srcs/utils/
-UTILS_FILES = error.c stack_utils.c
-UTILS_SRCS = $(addprefix $(UTILS_DIR), $(UTILS_FILES))
+OBJS	=	$(patsubst srcs/%.c,objs/%.o,$(SRCS))
+OBJ_DIR	=	objs
 
-# メインロジック関連
-SRCS_DIR = srcs/
-SRCS_FILES = main.c init.c sort_elements.c sort_small.c chunk_sort.c
-SRCS = $(addprefix $(SRCS_DIR), $(SRCS_FILES))
+LIBDIR	=	includes/libft
+LIB		=	libft.a
+FT_PRINTFDIR	=	$(LIBDIR)/ft_printf
+FT_PRINTF		=	libftprintf.a
 
-# すべてのソースファイルを結合
-ALL_SRCS = $(SRCS) $(CMDS_SRCS) $(UTILS_SRCS)
+.DEFAULT_GOAL = all
 
-# --- オブジェクトファイル ---
-OBJS = $(ALL_SRCS:.c=.o)
-
-# --- ライブラリ ---
-LIBFT_DIR = includes/libft/
-LIBFT = $(LIBFT_DIR)libft.a
-PRINTF_DIR = includes/printf/
-PRINTF = $(PRINTF_DIR)printf.a
-
-# --- インクルードパス ---
-INCS = -I includes -I $(LIBFT_DIR) -I $(PRINTF_DIR)
-
-# --- ルール ---
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR)
-	$(MAKE) -C $(PRINTF_DIR)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
+$(NAME): $(OBJS) $(LIBDIR)/$(LIB)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBDIR) -lft -L$(FT_PRINTFDIR) -lftprintf
 
-%.o: %.c
-	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+$(LIBDIR)/$(LIB):
+	make -C $(LIBDIR)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: srcs/%.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(MAKE) -C $(LIBFT_DIR) clean
-	$(MAKE) -C $(PRINTF_DIR) clean
-	rm -f $(OBJS)
+	rm -rf $(OBJ_DIR)
+	make -C $(LIBDIR) clean
 
 fclean: clean
-	$(MAKE) -C $(LIBFT_DIR) fclean
-	$(MAKE) -C $(PRINTF_DIR) fclean
 	rm -f $(NAME)
+	make -C $(LIBDIR) fclean
 
 re: fclean all
 
