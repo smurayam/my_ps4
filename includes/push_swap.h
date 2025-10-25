@@ -6,7 +6,7 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 15:48:07 by nnnya             #+#    #+#             */
-/*   Updated: 2025/10/25 17:17:07 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/10/25 17:37:44 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void    exit_cleanly(t_stack *a, t_stack *b, int status);
 void    set_stacks(t_stack *a, t_stack *b, int ac, const char **av);
 int	    is_int_num(const char *nptr);
 int     ps_atoi(const char *nptr);
-int     has_dup_elem(int *arr, int size, int elem);
+int     has_dup_elem(t_stack stack);
 
 //main.c
 void	op_rra(t_stack *a);
