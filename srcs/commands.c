@@ -6,7 +6,7 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:42:47 by nnnya             #+#    #+#             */
-/*   Updated: 2025/10/25 19:45:45 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/10/28 18:13:06 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,21 @@ void    op_ra(t_stack *a)
 		a->vec[i] = a->vec[i + 1];
 	a->vec[i] = temp;
 	ft_printf("ra\n");
+}
+
+void    op_rb(t_stack *b)
+{
+    int temp;
+    ssize_t i;
+
+    if(b->size < 2)
+		return;
+	temp = b->vec[0];
+	i = -1;
+	while(++i < b->size - 1)
+		b->vec[i] = b->vec[i + 1];
+	b->vec[i] = temp;
+	ft_printf("rb\n");
 }
 
 void	op_rra(t_stack *a)
