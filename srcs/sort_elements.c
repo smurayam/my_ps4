@@ -6,7 +6,7 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 17:13:07 by nnnya             #+#    #+#             */
-/*   Updated: 2025/10/25 17:24:07 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/10/28 18:11:12 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    sort_elements(t_stack *a, t_stack *b)
 {
-    if (is_soreted(*a) == TRUE)
+    if (is_sorted(*a) == TRUE)
         return;
 	if (a->size == 2)
 		op_sa(a);
