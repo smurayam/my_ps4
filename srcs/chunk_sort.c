@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 01:05:23 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/07 18:59:24 by nnnya            ###   ########.fr       */
+/*   Created: 2025/12/08 01:42:23 by nnnya             #+#    #+#             */
+/*   Updated: 2025/12/08 02:27:01 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static int	calc_chunk_count(int size)
 {
 	if (size <= 100)
-		return (5);
-	return (13);
+		return (3);
+	return (6);
 }
 
 static int	find_b_max(t_stack *b)
@@ -80,6 +80,8 @@ static void	push_current_chunk(t_stack *a, t_stack *b, int lower, int upper)
 		if (val >= lower && val < upper)
 		{
 			op_pb(a, b);
+			if (val < (lower + upper) / 2)
+				op_rb(b);
 			count--;
 			i = 0;
 		}
@@ -98,17 +100,18 @@ void	chunk_sort(t_stack *a, t_stack *b)
 	int chunk;
 	int lower;
 	int upper;
-	;
+	int size;
 
-	chunk_count = calc_chunk_count(a->size);
-	chunk_size = (a->size / chunk_count) + (a->size % chunk_count ? 1 : 0);
+	size = a->size;
+	chunk_count = calc_chunk_count(size);
+	chunk_size = (size / chunk_count) + (size % chunk_count ? 1 : 0);
 	chunk = 0;
 	while (chunk < chunk_count)
 	{
 		lower = chunk * chunk_size;
 		upper = lower + chunk_size;
-		if (upper > a->size)
-			upper = a->size;
+		if (upper > size)
+			upper = size;
 		push_current_chunk(a, b, lower, upper);
 		chunk++;
 	}

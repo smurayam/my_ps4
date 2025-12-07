@@ -6,7 +6,7 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 16:06:01 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/07 18:59:31 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/12/08 01:11:51 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	is_int_num(const char *nptr)
 		if (nptr[i++] == '-')
 			sign *= -1;
 	}
+	if (nptr[i] == '\0')
+		return (FALSE);
 	while ('0' <= nptr[i] && nptr[i] <= '9')
 	{
 		num *= 10;
