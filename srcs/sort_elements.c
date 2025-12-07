@@ -6,7 +6,7 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 17:13:07 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/07 18:56:57 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/12/07 22:13:03 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ int	compare_arrays(int *arr1, int *arr2, int *arr3, int size)
 
 int	is_sorted(t_stack stack)
 {
-	int temp;
-	ssize_t i;
+	int		temp;
+	ssize_t	i;
 
 	if (!stack.vec)
 		return (FALSE);
@@ -103,6 +103,6 @@ int	is_sorted(t_stack stack)
 		if (stack.vec[i] <= temp)
 			return (FALSE);
 		temp = stack.vec[i];
-
-		return (TRUE);
 	}
+	return (TRUE);
+}

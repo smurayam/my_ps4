@@ -6,7 +6,7 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:42:47 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/07 18:59:26 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/12/07 22:03:47 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	op_pa(t_stack *a, t_stack *b)
 		while (--i > 0)
 		{
 			a->vec[i] = a->vec[i - 1];
-			i--;
 		}
 	}
 	a->vec[0] = b->vec[0];
@@ -60,7 +59,6 @@ void	op_pb(t_stack *a, t_stack *b)
 		while (--i > 0)
 		{
 			b->vec[i] = b->vec[i - 1];
-			i--;
 		}
 	}
 	b->vec[0] = a->vec[0];
