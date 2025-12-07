@@ -13,13 +13,13 @@
 
 #include "../includes/push_swap.h"
 
-void    exit_cleanly_error(t_stack *a, t_stack *b)
+void	exit_cleanly_error(t_stack *a, t_stack *b)
 {
-    write(STDERR_FILENO, "Error\n", 6);
-    exit_cleanly(a, b, FAILURE);
+	write(STDERR_FILENO, "Error\n", 6);
+	exit_cleanly(a, b, FAILURE);
 }
 
-void    exit_cleanly(t_stack *a, t_stack *b, int status)
+void	exit_cleanly(t_stack *a, t_stack *b, int status)
 {
 	if (a && a->vec)
 		free(a->vec);

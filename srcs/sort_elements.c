@@ -6,16 +6,16 @@
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 17:13:07 by nnnya             #+#    #+#             */
-/*   Updated: 2025/10/28 18:11:12 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/12/07 18:56:57 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    sort_elements(t_stack *a, t_stack *b)
+void	sort_elements(t_stack *a, t_stack *b)
 {
-    if (is_sorted(*a) == TRUE)
-        return;
+	if (is_sorted(*a) == TRUE)
+		return ;
 	if (a->size == 2)
 		op_sa(a);
 	else if (a->size == 3)
@@ -36,7 +36,7 @@ void	compress(t_stack *a, t_stack *b)
 	int	*to_sort;
 	int	i;
 
-	if(!a || !b)
+	if (!a || !b)
 		exit_cleanly_error(a, b);
 	to_sort = malloc(sizeof(int) * a->size);
 	if (!to_sort)
@@ -91,8 +91,8 @@ int	compare_arrays(int *arr1, int *arr2, int *arr3, int size)
 
 int	is_sorted(t_stack stack)
 {
-	int		temp;
-	ssize_t	i;
+	int temp;
+	ssize_t i;
 
 	if (!stack.vec)
 		return (FALSE);
@@ -103,6 +103,6 @@ int	is_sorted(t_stack stack)
 		if (stack.vec[i] <= temp)
 			return (FALSE);
 		temp = stack.vec[i];
+
+		return (TRUE);
 	}
-	return (TRUE);
-}
