@@ -6,13 +6,13 @@
 #    By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/24 19:27:39 by nnnya             #+#    #+#              #
-#    Updated: 2025/10/28 18:14:19 by nnnya            ###   ########.fr        #
+#    Updated: 2025/12/07 17:56:27 by nnnya            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        =    push_swap
 CC            =    cc
-CFLAGS        =    -Wall -Wextra 
+CFLAGS        =    -Wall -Wextra -Werror
 
 SRCS    =    srcs/commands.c \
             srcs/init.c \
