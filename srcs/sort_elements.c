@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 17:13:07 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/07 22:13:03 by nnnya            ###   ########.fr       */
+/*   Created: 2025/12/07 23:37:11 by nnnya             #+#    #+#             */
+/*   Updated: 2025/12/07 23:38:39 by nnnya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	compress(t_stack *a, t_stack *b)
 {
 	int	*to_sort;
 	int	i;
+	int	j;
 
 	if (!a || !b)
 		exit_cleanly_error(a, b);
@@ -45,8 +46,21 @@ void	compress(t_stack *a, t_stack *b)
 	while (++i < a->size)
 		to_sort[i] = a->vec[i];
 	bubble_sort(to_sort, a->size);
-	if (compare_arrays(a->vec, to_sort, a->vec, a->size) == FAILURE)
-		exit_cleanly_error(a, b);
+	i = 0;
+	while (i < a->size)
+	{
+		j = 0;
+		while (j < a->size)
+		{
+			if (a->vec[i] == to_sort[j])
+			{
+				a->vec[i] = j;
+				break ;
+			}
+			j++;
+		}
+		i++;
+	}
 	free(to_sort);
 }
 
@@ -74,25 +88,10 @@ void	bubble_sort(int *arr, int size)
 	}
 }
 
-int	compare_arrays(int *arr1, int *arr2, int *arr3, int size)
-{
-	int	i;
-
-	i = -1;
-	while (++i < size)
-	{
-		if (arr1[i] == arr2[i])
-			arr3[i] = i;
-		else
-			return (FAILURE);
-	}
-	return (SUCCESS);
-}
-
 int	is_sorted(t_stack stack)
 {
-	int		temp;
-	ssize_t	i;
+	int temp;
+	ssize_t i;
 
 	if (!stack.vec)
 		return (FALSE);
