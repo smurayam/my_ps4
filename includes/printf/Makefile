@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/06 02:48:26 by smurayam          #+#    #+#              #
-#    Updated: 2025/03/24 00:49:50 by smurayam         ###   ########.fr        #
+#    Updated: 2025/12/07 18:09:36 by nnnya            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) Libft01/libft.a
 	$(ARS) $(NAME) $(OBJS)
 
 Libft01/libft.a:

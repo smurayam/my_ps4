@@ -6,7 +6,7 @@
 #    By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/24 19:27:39 by nnnya             #+#    #+#              #
-#    Updated: 2025/12/07 17:56:27 by nnnya            ###   ########.fr        #
+#    Updated: 2025/12/07 18:08:03 by nnnya            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,10 +52,12 @@ $(OBJ_DIR)/%.o: srcs/%.c | $(OBJ_DIR)
 clean:
     rm -rf $(OBJ_DIR)
     make -C $(LIBDIR) clean
+    make -C $(FT_PRINTFDIR) clean
 
 fclean: clean
     rm -f $(NAME)
     make -C $(LIBDIR) fclean
+    make -C $(FT_PRINTFDIR) fclean
 
 re: fclean all
 
