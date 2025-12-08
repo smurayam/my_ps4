@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 01:42:23 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/08 02:27:01 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/12/09 08:10:28 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,12 +95,12 @@ static void	push_current_chunk(t_stack *a, t_stack *b, int lower, int upper)
 
 void	chunk_sort(t_stack *a, t_stack *b)
 {
-	int chunk_count;
-	int chunk_size;
-	int chunk;
-	int lower;
-	int upper;
-	int size;
+	int	chunk_count;
+	int	chunk_size;
+	int	chunk;
+	int	lower;
+	int	upper;
+	int	size;
 
 	size = a->size;
 	chunk_count = calc_chunk_count(size);

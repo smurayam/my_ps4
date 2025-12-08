@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 16:06:01 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/08 01:11:51 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/12/09 08:10:53 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ int	ps_atoi(const char *nptr)
 
 int	has_dup_elem(t_stack stack)
 {
-	ssize_t i;
-	ssize_t j;
+	ssize_t	i;
+	ssize_t	j;
 
 	i = -1;
 	while (++i < stack.size)

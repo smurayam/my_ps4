@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_elements.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 23:37:11 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/07 23:38:39 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/12/09 08:11:12 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ void	bubble_sort(int *arr, int size)
 
 int	is_sorted(t_stack stack)
 {
-	int temp;
-	ssize_t i;
+	int		temp;
+	ssize_t	i;
 
 	if (!stack.vec)
 		return (FALSE);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 18:27:37 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/07 18:59:39 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/12/09 08:11:19 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	sort_4(t_stack *a, t_stack *b)
 
 void	sort_5(t_stack *a, t_stack *b)
 {
-	int min_idx;
+	int	min_idx;
 
 	min_idx = get_min_idx(a);
 	if (min_idx == 1)

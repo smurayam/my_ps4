@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnnya <nnnya@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:42:47 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/07 22:03:47 by nnnya            ###   ########.fr       */
+/*   Updated: 2025/12/09 08:10:36 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,8 @@ void	op_rra(t_stack *a)
 
 void	op_rrb(t_stack *b)
 {
-	int temp;
-	ssize_t i;
+	int		temp;
+	ssize_t	i;
 
 	if (b->size < 2)
 		return ;
