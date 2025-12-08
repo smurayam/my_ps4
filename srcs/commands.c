@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:42:47 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/09 08:10:36 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:29:18 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,64 +68,4 @@ void	op_pb(t_stack *a, t_stack *b)
 		a->vec[i] = a->vec[i + 1];
 	a->size--;
 	ft_printf("pb\n");
-}
-
-void	op_ra(t_stack *a)
-{
-	int		temp;
-	ssize_t	i;
-
-	if (a->size < 2)
-		return ;
-	temp = a->vec[0];
-	i = -1;
-	while (++i < a->size - 1)
-		a->vec[i] = a->vec[i + 1];
-	a->vec[i] = temp;
-	ft_printf("ra\n");
-}
-
-void	op_rb(t_stack *b)
-{
-	int		temp;
-	ssize_t	i;
-
-	if (b->size < 2)
-		return ;
-	temp = b->vec[0];
-	i = -1;
-	while (++i < b->size - 1)
-		b->vec[i] = b->vec[i + 1];
-	b->vec[i] = temp;
-	ft_printf("rb\n");
-}
-
-void	op_rra(t_stack *a)
-{
-	int		temp;
-	ssize_t	i;
-
-	if (a->size < 2)
-		return ;
-	temp = a->vec[a->size - 1];
-	i = a->size - 1;
-	while (--i >= 0)
-		a->vec[i + 1] = a->vec[i];
-	a->vec[0] = temp;
-	ft_printf("rra\n");
-}
-
-void	op_rrb(t_stack *b)
-{
-	int		temp;
-	ssize_t	i;
-
-	if (b->size < 2)
-		return ;
-	temp = b->vec[b->size - 1];
-	i = b->size - 1;
-	while (--i >= 0)
-		b->vec[i + 1] = b->vec[i];
-	b->vec[0] = temp;
-	ft_printf("rrb\n");
 }
