@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 01:42:23 by nnnya             #+#    #+#             */
-/*   Updated: 2025/12/09 08:27:07 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/12/09 09:10:04 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,18 @@ static void	push_current_chunk(t_stack *a, t_stack *b, int lower, int upper)
 	}
 }
 
-void	chunk_sort(t_stack *a, t_stack *b)
+static void	process_chunks(t_stack *a, t_stack *b, int size)
 {
+	int	chunk;
 	int	chunk_count;
 	int	chunk_size;
-	int	chunk;
 	int	lower;
 	int	upper;
-	int	size;
 
-	size = a->size;
 	chunk_count = calc_chunk_count(size);
-	chunk_size = (size / chunk_count) + (size % chunk_count ? 1 : 0);
+	chunk_size = size / chunk_count;
+	if (size % chunk_count)
+		chunk_size++;
 	chunk = 0;
 	while (chunk < chunk_count)
 	{
@@ -61,6 +61,14 @@ void	chunk_sort(t_stack *a, t_stack *b)
 		push_current_chunk(a, b, lower, upper);
 		chunk++;
 	}
+}
+
+void	chunk_sort(t_stack *a, t_stack *b)
+{
+	int	size;
+
+	size = a->size;
+	process_chunks(a, b, size);
 	while (b->size > 0)
 	{
 		bring_b_max_top(b);

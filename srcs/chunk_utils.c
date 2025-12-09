@@ -6,20 +6,20 @@
 /*   By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 08:25:38 by smurayam          #+#    #+#             */
-/*   Updated: 2025/12/09 08:27:05 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:08:12 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	calc_chunk_count(int size)
+int	calc_chunk_count(int size)
 {
 	if (size <= 100)
 		return (3);
 	return (6);
 }
 
-static int	find_b_max(t_stack *b)
+int	find_b_max(t_stack *b)
 {
 	int	i;
 	int	idx;
@@ -40,7 +40,7 @@ static int	find_b_max(t_stack *b)
 	return (idx);
 }
 
-static void	bring_b_max_top(t_stack *b)
+void	bring_b_max_top(t_stack *b)
 {
 	int	idx;
 	int	count;

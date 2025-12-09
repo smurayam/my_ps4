@@ -6,11 +6,11 @@
 /*   By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 21:21:08 by smurayam          #+#    #+#             */
-/*   Updated: 2025/12/09 08:09:57 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/12/09 08:18:16 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_RINTF_H
+#ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
 # include <stdio.h>
@@ -27,6 +27,5 @@ ssize_t	ft_print_decimal(int n);
 int		ft_printf_unsigned(unsigned int ui);
 int		print_hex(unsigned int num, int is_lower);
 int		ft_printf_percent(void);
-#endif
 
-// makefiledamerasii
+#endif

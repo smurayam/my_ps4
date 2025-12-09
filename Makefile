@@ -6,7 +6,7 @@
 #    By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/24 19:27:39 by nnnya             #+#    #+#              #
-#    Updated: 2025/12/09 08:11:26 by smurayam         ###   ########.fr        #
+#    Updated: 2025/12/09 10:13:22 by smurayam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ SRCS        =   srcs/commands.c \
                 srcs/chunk_sort.c \
                 srcs/error.c \
                 srcs/main.c \
-                srcs/sort_small.c
+                srcs/sort_small.c\
+				srcs/chunk_utils.c \
+				srcs/commands_rotate.c
 
 OBJS        =   $(patsubst srcs/%.c,objs/%.o,$(SRCS))
 OBJ_DIR     =   objs
