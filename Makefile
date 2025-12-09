@@ -6,7 +6,7 @@
 #    By: smurayam <smurayam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/24 19:27:39 by nnnya             #+#    #+#              #
-#    Updated: 2025/12/09 10:13:22 by smurayam         ###   ########.fr        #
+#    Updated: 2025/12/09 10:26:26 by smurayam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS      =   -Wall -Wextra -Werror
 SRCS        =   srcs/commands.c \
                 srcs/init.c \
                 srcs/sort_elements.c \
+				srcs/sort_utils.c\
                 srcs/chunk_sort.c \
                 srcs/error.c \
                 srcs/main.c \
